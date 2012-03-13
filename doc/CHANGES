@@ -1,0 +1,31 @@
+Features in version 0, previous version not published (before June 13th, 2011)
+    * DB:
+        + Adding "boaidp" table, thinking it is obligatory for block.
+        + Adding "oai_records" table, for recording metadata, mainly Dublin Core.
+
+Changes in version 1.0, starting version published (May 13th, 2011)
+    * DB:
+        - Removing "boaidp" table.
+    * Automation of the metadata pre-loading.
+        + Adding by means of cron() function of moodle blocks.
+        + The fiveteen field fo Dublin Core's Metadata are loaded, periodically, 
+            on "oai_records" table associated to any moodle's course if not 
+            exists. 
+        + Some of them simply filled as empty string so far.
+
+Changes in version 1.1 (May xxx, 2011)
+    *  (18th) Testing Global Configuration for block
+    
+Changes in version 1.2 (Jan xxx, 2012)
+    *  (29th) Multile pages for Global Configuration of block. Currently, 
+                letting creation of new metadata field for existing schema on DB.
+    *  (31st) Generalization of code for dinamic loading of metadata field and 
+                using multiple tables (=> more scalability).
+                
+Changes in version 1.3 (Feb xxx, 2012)
+    *  (15th) 	- Multiple values for metadata field marked with a boolean column "isMultiple=1".
+				- Identification of dynamic HTML controls by means of 'oai_metadata_values.id' and 
+					some character prefix because of HTML "name" restriction to non-numeric.
+    *  (19th)	- New version of db/install.xml (Warning! -> needed PREVIOUS/NEXT attributes in TABLE tag)
+				- New version of db/upgrade.php 
+				- Cron disabled.

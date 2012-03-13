@@ -1,0 +1,164 @@
+<!--
+// <Created at May 18th, 2011/>
+-->
+
+<?php
+
+require_once('block_boaidp.php');
+$boaidp = new block_boaidp();
+
+//$q='';
+$bname = $boaidp->bname;
+
+//global $SESSION;
+ 
+	//$bname = 'block_boaidp';
+
+	if(!isset($CFG->block_boaidp_schema))
+		$CFG->block_boaidp_schema = '';
+	if(!isset($CFG->block_boaidp_field))
+		$CFG->block_boaidp_field = '';
+
+	// For multiple pages input
+	if(!isset($CFG->block_boaidp_step))    
+		$CFG->block_boaidp_step = $boaidp->block_boaidp_get_starting_step();  
+	else{
+		$CFG->block_boaidp_step = $boaidp->block_boaidp_get_next_step($CFG->block_boaidp_step);
+	}
+
+	// GET/POST data
+	if(!isset($block_id))
+		$block_id = required_param('block', 1, PARAM_INT);
+	if(!isset($choose))
+		$choose = optional_param('choose', 1, PARAM_INT);  //If not exists, 1 is returned
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>  
+            <?php //echo  "BLOCK ID=>".$block_id."<br/>"; ?>
+            <?php //echo  "STEP=>".$CFG->block_boaidp_step."<br/>"; ?>
+            <?php //echo  "ID CHOSEN=>".$choose."<br/>"; ?> 
+        </div>
+        <div style="text-align: center;">
+            <input type="hidden" name="block_boaidp_step" 
+                   <?php if(!empty($CFG->block_boaidp_step)) 
+                   echo 'value="'.$CFG->block_boaidp_step.'"'; ?> />
+                   <br/>
+            <!--input type="hidden" name="block_boaidp_cfg2" value="0" /-->
+
+            <?php echo block_boaidp_get_controls($CFG->block_boaidp_step,$choose,$bname,$boaidp); ?>             
+
+            <p>           
+                       <?php echo block_boaidp_get_buttons($CFG->block_boaidp_step,$boaidp); ?>      
+            </p>
+        </div>
+    </body>
+</html>
+
+<?php
+
+
+
+	function block_boaidp_get_controls($status,$key,$bname,$b_obj){
+		global $CFG;
+
+		$controls = '';
+
+		switch($status){
+			case 'ChoosingSchema':
+				$controls = choose_from_menu(block_boaidp_get_schemas_as_array('oai_metadata_schema','',''), 'block_boaidp_schema', $CFG->block_boaidp_schema);
+				break;
+			case 'ChoosingField':
+				//$controls = choose_from_menu(block_boaidp_get_records_as_array('oai_metadata_fields','schema_id',$key), 'block_boaidp_field', $CFG->block_boaidp_field);
+				$controls = format_tf('block_boaidp_fieldName', $bname, '');
+				break;
+			case 'Finish':
+				//$controls = choose_from_menu(block_boaidp_get_records_as_array('oai_metadata_fields','schema_id',$key), 'block_boaidp_field', $CFG->block_boaidp_field);
+				$controls = get_string('block_boaidp_confirmNewField', $bname).$CFG->block_boaidp_fieldName;
+				break; 
+	}
+
+	return $controls;
+	}
+
+	function block_boaidp_get_buttons($status,$b_obj){
+		$buttons = '<input type="submit" ';
+
+		//if( strtoupper($b_obj->block_boaidp_get_finish_step())==strtoupper($status) ){ // If configuration has finished 
+		if( $b_obj->boaidp_is_finished_step($status) ){
+			$buttons .= 'name="block_boaidp_userAction" value="';
+			$buttons .= get_string('savechanges').'"';			
+			$buttons .= '/>';
+			
+			$buttons .= '<input type="submit" name="block_boaidp_userAction"';
+			$buttons .= ' value="';
+			$buttons .= get_string('cancel').'"';	
+		}else{
+			$buttons .= 'name="block_boaidp_userAction" value=" ';
+			$buttons .= get_string('continue').'"';
+		}
+		
+		$buttons .= '/>';
+		
+		return $buttons;
+	}
+
+	function block_boaidp_get_schemas_as_array($mdTab='oai_metadata_schema',$checkField='', $checkValue='') {
+
+	$course_tab = 'course';
+	$oai_tab = 'oai_records';
+
+	$pk_field = 'id';
+	$value_field = 'name';
+				// Retrieve Associated Array by means 2-first fields of recordset
+	$records = get_records_menu($mdTab,$checkField,$checkValue,'id ASC',$pk_field.','.$value_field); 
+
+	if( $records == false ){
+	return array("error" => "No se han recuperado datos");
+	}else{     
+	return $records;
+	}
+	}
+
+	// Own function, not overwritten
+	// associative array extra_params 
+	/*function block_boaidp_construct_redirect_URL($b_id='0', $extra_params=''){
+	global $CFG;
+
+	$first = true;
+	$target_url = $CFG->wwwroot.'/'.$CFG->admin.'/blocks.php?block='.$b_id.'&';
+
+	if( $extra_params != ''){
+	foreach ($extra_params as $par => $val){
+	if(!$first){
+	$target_url .= '&';
+	}else $first = false;
+
+	$target_url .= urlencode($par).'='.urlencode($val);
+	}
+	}
+
+	return $target_url;
+	}*/
+
+
+	/**
+	* HTML output for textfield fields 
+	*
+	* HTML output for textfield fields
+	* @param	object	&$obj Target object passed by reference
+	*/
+	function format_tf($label_name, $block_name, $current_value, $size=50, $max_size=255){	   
+	   $html_output = '';
+	   $html_output = $html_output.get_string($label_name, $block_name).': '.print_textfield($label_name, $current_value, '', $size, $max_size, true);
+
+		return $html_output;
+	}
+?>

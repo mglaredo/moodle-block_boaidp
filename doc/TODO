@@ -1,0 +1,21 @@
+(May 18th, 2011)
+- Error Control on using MOODLE'S XMLDB abstraction layer, I.E. result sets.
+(May 24th, 2011)
+- Add status field to tables on DB for deleting in a logic mode. Change queries to use this concept.
+(Jan 31th, 2012)
+- Generate dummy records (value=NULL) after adding new Metadata Field for each block instance in oai_record table
+- Global Configuration of Block letting creation of new Schemas.
+(Feb 19th, 2012)
+- Test possible problems with browser's arrows navigation instead of using our buttons.
+- Add timestamp columns to register creation/modification dates.
+(Feb 20th, 2012)
+- Maybe to try using block permissions to restrict delete operation to config_global.html and to control actions involved.
+(Feb 21th, 2012) 
+<DONE! 07/03/2012>
+- Use instance_create() and instance_delete() functions from block_base class to do:
+    -- i_c: Improve initialization done by means specialization and thus reduce its complexity.
+    -- i_d: Delete every data related with a block instance.
+    * Review: 
+        http://xref.moodle.org/blocks/moodleblock.class.php.source.html#l749
+        http://moodle.org/mod/forum/discuss.php?d=169931#p856571
+</DONE! 07/03/2012>
