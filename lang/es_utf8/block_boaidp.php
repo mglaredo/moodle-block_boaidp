@@ -30,6 +30,7 @@
  */
 
 //BLOCK'S GENERAL STRINGS
+$string['pluginname'] = 'boaidp';
 $string["oaidp_report"] = 'What my report is called';
 $string["boaidp"] = 'OAI METADATA RECORD';
 $string["configcontent"] = 'Texto Asociado';

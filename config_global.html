@@ -73,14 +73,14 @@ $bname = $boaidp->bname;
 
 		switch($status){
 			case 'ChoosingSchema':
-				$controls = choose_from_menu(block_boaidp_get_schemas_as_array('oai_metadata_schema','',''), 'block_boaidp_schema', $CFG->block_boaidp_schema);
+				$controls = choose_from_menu(block_boaidp_get_schemas_as_array($b_obj->instance->sch_tab/*'oai_metadata_schema'*/,'',''), 'block_boaidp_schema', $CFG->block_boaidp_schema);
 				break;
 			case 'ChoosingField':
-				//$controls = choose_from_menu(block_boaidp_get_records_as_array('oai_metadata_fields','schema_id',$key), 'block_boaidp_field', $CFG->block_boaidp_field);
+				//$controls = choose_from_menu(block_boaidp_get_records_as_array($b_obj->instance->fld_tab/*'oai_metadata_fields'*/,'schema_id',$key), 'block_boaidp_field', $CFG->block_boaidp_field);
 				$controls = format_tf('block_boaidp_fieldName', $bname, '');
 				break;
 			case 'Finish':
-				//$controls = choose_from_menu(block_boaidp_get_records_as_array('oai_metadata_fields','schema_id',$key), 'block_boaidp_field', $CFG->block_boaidp_field);
+				//$controls = choose_from_menu(block_boaidp_get_records_as_array($b_obj->instance->fld_tab/*'oai_metadata_fields'*/,'schema_id',$key), 'block_boaidp_field', $CFG->block_boaidp_field);
 				$controls = get_string('block_boaidp_confirmNewField', $bname).$CFG->block_boaidp_fieldName;
 				break; 
 	}
@@ -110,7 +110,7 @@ $bname = $boaidp->bname;
 		return $buttons;
 	}
 
-	function block_boaidp_get_schemas_as_array($mdTab='oai_metadata_schema',$checkField='', $checkValue='') {
+	function block_boaidp_get_schemas_as_array($mdTab='block_boaidp_oai_metadata_schema',$checkField='', $checkValue='') {
 
 	$course_tab = 'course';
 	$oai_tab = 'oai_records';

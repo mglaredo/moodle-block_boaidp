@@ -13,7 +13,7 @@ function xmldb_block_boaidp_upgrade($oldversion) {
     if ($result && $oldversion < 2011051600) {
 
     /// Define table oai_metadata_schema to be created
-        $table = new XMLDBTable('oai_metadata_schema');
+        $table = new XMLDBTable('block_boaidp_oai_metadata_schema');
 
     /// Adding fields to table oai_metadata_schema
         $table->addFieldInfo('id', XMLDB_TYPE_INTEGER, '11', XMLDB_UNSIGNED, XMLDB_NOTNULL, XMLDB_SEQUENCE, null, null, null);
@@ -30,7 +30,7 @@ function xmldb_block_boaidp_upgrade($oldversion) {
     if ($result && $oldversion  < 2011051600) {
 
   /// Define table oai_metadata_fields to be created
-        $table = new XMLDBTable('oai_metadata_fields');
+        $table = new XMLDBTable('block_boaidp_oai_metadata_fields');
 
     /// Adding fields to table oai_metadata_fields
         $table->addFieldInfo('id', XMLDB_TYPE_INTEGER, '11', XMLDB_UNSIGNED, XMLDB_NOTNULL, XMLDB_SEQUENCE, null, null, null);
@@ -47,7 +47,7 @@ function xmldb_block_boaidp_upgrade($oldversion) {
     
     if ($result && $oldversion  < 2011051600) {
     /// Define table oai_metadata_values to be created
-        $table = new XMLDBTable('oai_metadata_values');
+        $table = new XMLDBTable('block_boaidp_oai_metadata_values');
 
     /// Adding fields to table oai_metadata_values
         $table->addFieldInfo('id', XMLDB_TYPE_INTEGER, '11', XMLDB_UNSIGNED, XMLDB_NOTNULL, XMLDB_SEQUENCE, null, null, null);
@@ -66,7 +66,7 @@ function xmldb_block_boaidp_upgrade($oldversion) {
     if ($result && $oldversion < 2012021900) {
 
     /// Define field ismultiple to be added to oai_metadata_fields
-        $table = new XMLDBTable('oai_metadata_fields');
+        $table = new XMLDBTable('block_boaidp_oai_metadata_fields');
         $field = new XMLDBField('ismultiple');
         $field->setAttributes(XMLDB_TYPE_INTEGER, '1', XMLDB_UNSIGNED, XMLDB_NOTNULL, null, null, null, '1', 'name');
     /// Launch add field ismultiple
@@ -77,7 +77,7 @@ function xmldb_block_boaidp_upgrade($oldversion) {
     if ($result && $oldversion < 2012021901) {
 
     /// Define field id to be dropped from oai_records
-        $table = new XMLDBTable('oai_records');
+        $table = new XMLDBTable('block_boaidp_oai_records');
         
         $fields = array('dc_title','dc_creator','dc_subject','dc_description','dc_contributor','dc_publisher','dc_date',
                         'dc_type','dc_format','dc_identifier','dc_source','dc_language','dc_relation','dc_coverage','dc_rights');

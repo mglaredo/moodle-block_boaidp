@@ -353,10 +353,10 @@ function boaidp_initInstance(){
         $this->instance = new stdClass;
     }
         $this->ctrl_prefix = 'id=';
-        $this->instance->or_tab =  'oai_records';
-        $this->instance->mv_tab =  'oai_metadata_values';
-        $this->instance->fld_tab = 'oai_metadata_fields';
-        $this->instance->sch_tab = 'oai_metadata_schema';
+        $this->instance->or_tab =  'block_boaidp_oai_records';
+        $this->instance->mv_tab =  'block_boaidp_oai_metadata_values';
+            $this->instance->fld_tab = 'block_boaidp_oai_metadata_fields';
+        $this->instance->sch_tab = 'block_boaidp_oai_metadata_schema';
     
     // Initialization of variables not setted.
     if (!isset($this->content)){
@@ -418,7 +418,7 @@ function boaidp_is_finished_step($str){
 * @param string	$schema_id Key for schema
 * @param string	$retrive_fields Columns for retrieving from $tab
 */
-function boaidp_get_FieldsForSchema(&$q,$tabs='mdl_oai_metadata_fields fld', 
+function boaidp_get_FieldsForSchema(&$q,$tabs='mdl_block_boaidp_oai_metadata_fields fld', 
         $cond='fld.id=mv.field_id', $schema_cond='fld.schema_id=fld.schema_id', 
         $retrieve_fields='fld.id, fld.schema_id, fld.name'){
 
@@ -442,7 +442,7 @@ function boaidp_get_FieldsForSchema(&$q,$tabs='mdl_oai_metadata_fields fld',
 * @param string	$schema_id Key for schema
 * @param string	$retrive_fields Columns for retrieving from $tab
 */
-function boaidp_get_FieldsValuesForSchema(&$q,$tabs='mdl_oai_metadata_fields fld, mdl_oai_metadata_values mv', 
+function boaidp_get_FieldsValuesForSchema(&$q,$tabs='mdl_block_boaidp_oai_metadata_fields fld, mdl_block_boaidp_oai_metadata_values mv', 
             $cond='fld.id=mv.field_id', $provider_cond='mv.provider=mv.provider', 
             $schema_cond='fld.schema_id=fld.schema_id', $retrieve_fields='mv.id, fld.schema_id, fld.name, mv.value',
             $order='fld.name'){
