@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
-  <TABLES>
+  <TABLES> 
     <TABLE NAME="block_boaidp_oai_records" COMMENT="Table for fixed fields" NEXT="block_boaidp_oai_metadata_schema">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="11" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="url"/>
