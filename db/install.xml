@@ -70,14 +70,13 @@
 		</KEYS>
 	</TABLE>         
   </TABLES>
-  <!--STATEMENTS>
-    <STATEMENT NAME="insert log_display" TYPE="insert" TABLE="log_display" COMMENT="Initial insert of records on table log_display. Each record describes how data will be showed by log reports.">
+  <STATEMENTS>
+    <STATEMENT NAME="insert scheme" TYPE="insert" TABLE="block_boaidp_oai_metadata_schema" COMMENT="Initial insert of records for schemes. ">
       <SENTENCES>
-        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('boaidp', 'add', 'boaidp', 'name')" />
-
-        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('boaidp', 'update', 'boaidp', 'name')" />
-        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('boaidp', 'view', 'boaidp', 'name')" />
+        <SENTENCE TEXT="(prefix,name) VALUES ('oai_dc', 'Dublic Core')" />
+        <!-- SENTENCE TEXT="(module, action, mtable, field) VALUES ('boaidp', 'update', 'boaidp', 'name')" />
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('boaidp', 'view', 'boaidp', 'name')" / -->
       </SENTENCES>
     </STATEMENT>
-  </STATEMENTS-->
+  </STATEMENTS>
 </XMLDB>

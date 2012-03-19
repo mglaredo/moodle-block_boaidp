@@ -59,11 +59,15 @@ function hide_header() {
 */
 function before_delete(){
     $conf_vars_array = get_records_select('config','name like "%block_boaidp_%"','','name','','');
+    
+    if( !is_null($conf_vars_array) && $conf_vars_array!=FALSE )
+    {
+        foreach ($conf_vars_array as $conf){
+            if( strcmp( substr($conf->name,0,  strlen('block_boaidp')),'block_boaidp') == 0 )
+                    unset_config($conf->name,NULL);
+        }
+    }   
 
-    foreach ($conf_vars_array as $conf){
-        if( strcmp( substr($conf->name,0,  strlen('block_boaidp')),'block_boaidp') == 0 )
-                unset_config($conf->name,NULL);
-    }
 }
 
 /**
@@ -222,7 +226,7 @@ $this->title   = get_string('boaidp', 'block_boaidp');
 $this->version = 2012021901; //2011051600;
 $this->cron = 0; //1;
 
-$this->boaidp_initInstance();
+//$this->boaidp_initInstance();
 //$this->requires  // Moodle version - copy from $version in the top-level version.php file.
 
 }
