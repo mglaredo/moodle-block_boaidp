@@ -11,12 +11,12 @@
  
 defined('MOODLE_INTERNAL') || die();
  
-$plugin->version   = 2012021901;
-//$plugin->requires  = TODO; // See http://docs.moodle.org/dev/Moodle_Versions
+$plugin->version   = 2012031900;
+$plugin->requires  = 2007101550; //minimum 1.9.5  // See http://docs.moodle.org/dev/Moodle_Versions
 $plugin->cron      = 0;
 $plugin->component = 'block_boaidp';
-$plugin->maturity  = BETA; //MATURITY_STABLE;
-$plugin->release   = '1.3';
+$plugin->maturity  = MATURITY_RC; //BETA; //MATURITY_STABLE;
+$plugin->release   = '1.3.1';
  
 $plugin->dependencies = array(
     'mod_forum' => ANY_VERSION,

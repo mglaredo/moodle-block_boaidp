@@ -223,7 +223,7 @@ function  boaidp_get_conf_redirect_URL($b_id='0', $extra_params=''){
 
 function init() {
 $this->title   = get_string('boaidp', 'block_boaidp');
-$this->version = 2012021901; //2011051600;
+$this->version = 2012031900; //2011051600;
 $this->cron = 0; //1;
 
 //$this->boaidp_initInstance();
