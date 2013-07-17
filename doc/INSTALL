@@ -1,6 +1,8 @@
 Requirements:
 
     - Moodle 1.9+ and compliant Database
+	OR
+	- Moodle 2.5+ and compliant Database
 	
 Installation:
 
@@ -19,7 +21,11 @@ Installation:
 
 FAQ: 
 
-1. TODO
+1. Is this block able to harvest OAI records? No so far, this block is only focus on 
+	storing OAI records associated with each moodle course.
+2. Is there any way to preload some OAI fields? On Moodle 1.9 version is automatic, but 
+	so far on Moodle 2.x we	only let manual load by configuring each block instance 
+	within its course.
 
 
 Any comments are welcome.
