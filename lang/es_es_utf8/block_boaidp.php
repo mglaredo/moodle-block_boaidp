@@ -2,12 +2,15 @@
 
 //From NEWBLOCK 
 $string['blockstring'] = 'Block string';
-$string['descconfig'] = 'Description of the config section';
+$string['descconfig'] = 'Por favor, rellene los siguientes datos con detenimiento';
 $string['descfoo'] = 'Config description';
-$string['headerconfig'] = 'Config section header';
-$string['labelfoo'] = 'Config label';
+$string['headerconfig'] = 'Bloque BOAIDP: Configuración Global';
+$string['labelfoo'] = '----';
 $string['boaidp:addinstance'] = 'Add a newblock block';
 $string['boaidp:myaddinstance'] = 'Add a newblock block to my moodle';
+$string['dcfields'] = 'DCMES';
+$string['dcfieldsDesc'] = 'DCMES';
+$string['dcmes'] = 'Resumen DCMES';
 //$string['pluginname'] = 'Newblock';
 
 //BLOCK'S GENERAL STRINGS

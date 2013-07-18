@@ -36,4 +36,3 @@ Changes in version 2.0 (Jul xxx, 2013)
 				- No dynamic creation of metadata schema.
 				- No additional tables.
 				- No preload fields values (users must fill manually).
-				- Hard-coded Simple Dublin Core Metadata Element Set (DCMES): http://en.wikipedia.org/wiki/Dublin_Core#Simple_Dublin_Core 

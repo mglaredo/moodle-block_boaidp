@@ -29,12 +29,19 @@
  * @author Miguel Gonzalez Laredo, mglaredo@ugr.es                     
  */
 
+/* More information to develop this feature on:
+ * - http://docs.moodle.org/dev/Blocks/Appendix_A
+ * - (config_save()) http://docs.moodle.org/dev/Blocks/Appendix_A#config_save.28.29
+ * */
 defined('MOODLE_INTERNAL') || die();
 
 class block_boaidp extends block_base {
-
+	
+	protected $bname = 'block_boaidp';
+	
     function init() {
         $this->title = get_string('pluginname', 'block_boaidp');
+        //set_config('dcmetadatas','desde INIT');
     }
 
     function get_content() {
@@ -53,6 +60,7 @@ class block_boaidp extends block_base {
         $this->content->items = array();
         $this->content->icons = array();
         $this->content->footer = '';
+        $this->content->text = new stdClass();
 
         // user/index.php expect course context, so get one if page has module context.
         $currentcontext = $this->page->context->get_course_context(false);
@@ -69,9 +77,9 @@ class block_boaidp extends block_base {
             $this->context->text .= "site context";
         }
 
-        if (isset($this->config) && isset($this->config->text) && ! empty($this->config->text)) {
+        if (isset($this->config) && ! empty($this->config) && isset($this->config->text) && ! empty($this->config->text)) {
             $this->content->text .= $this->config->text;
-        }else{$this->content->text="";}
+        }//else{$this->content->text=" ";}
 
         return $this->content;
     }
