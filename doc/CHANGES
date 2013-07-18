@@ -32,7 +32,11 @@ Changes in version 1.3 (Feb xxx, 2012)
 
 Changes in version 2.0 (Jul xxx, 2013)
     * (17th)	- Complete rewriting of block for Moodle 2.x (currently 2.5) . 
-				- At this basic version only static predefined fields are present on block instance configuration. 
-				- No dynamic creation of metadata schema.
-				- No additional tables.
-				- No preload fields values (users must fill manually).
+		- At this basic version only static predefined fields are present 				on block instance configuration. 
+		- No dynamic creation of metadata schema.
+		- No additional tables.
+		- No preload fields values (users must fill manually).
+
+    * (18th)	- Adding GLOBAL SETTING for customizing Metadata Element Set (+setting.php) and
+			dynamic including on form_edit.php for Course Block's instance edition.
+			
