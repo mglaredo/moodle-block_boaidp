@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * +----------------------------------------------------------------------+
  * | PHP Version 5                                                        |
  * +----------------------------------------------------------------------+
@@ -32,9 +32,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2013071800;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2013071900;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2012112900;        // Requires this Moodle version
 $plugin->component = 'block_boaidp'; 	// Full name of the plugin (used for diagnostics)
 $plugin->cron = 0;
-$plugin->maturity = MATURITY_RC; 		// MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC, MATURITY_STABLE 
-$plugin->release   = '2.0.2';
+$plugin->maturity = MATURITY_STABLE; 		// MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC, MATURITY_STABLE 
+$plugin->release   = '2.0.3';

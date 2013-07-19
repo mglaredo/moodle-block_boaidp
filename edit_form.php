@@ -1,12 +1,31 @@
 <?php
+/**
+ * File: BOAIDP Course block edition
+ * @package MOODLE-BLOCK-BOAIDP
+ */ 
 
+/**
+ * Edit form's class: changing metadata values from course's block
+ */
 class block_boaidp_edit_form extends block_edit_form {
-
-	protected $bname = 'block_boaidp';
-	protected $nl = "\r\n";
-	protected $cfg_prefix = "config_";
+	/**
+	 * @var	string	contains for Moodle usage
+	 */
+	public $bname = 'block_boaidp';
+	/**
+    * @var string New Line string
+    */
+	public $nl = "\r\n";
+	/**
+    * @var string Prefix needed for naming config values
+    */
+	public $cfg_prefix = "config_";
 	
-    protected function specific_definition($mform) {
+	/*public*/ 
+	/**
+	 * Generate Moodle Form for customize our course's block
+	 */
+    function specific_definition($mform) {
 		global $COURSE;
 		
         // Section header title according to language file.
@@ -31,7 +50,12 @@ class block_boaidp_edit_form extends block_edit_form {
 
     }
     
-    protected function get_fields($dcfields=null){
+    /*public*/ 
+    /**
+	 * Custom function: facilitate obtaining the dynamic/predefined DCMES as array
+	 * @return array containing DCMES fields
+	 */
+	 function get_fields($dcfields=null){
 		
 		if(!$dcfields){ // If not GLOBAL setting obtained
 			$fields = array(
