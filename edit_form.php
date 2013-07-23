@@ -31,6 +31,7 @@ class block_boaidp_edit_form extends block_edit_form {
         // Section header title according to language file.
         $mform->addElement('header', 'configheader', get_string('boaidp',$this->bname));
         
+        // Obtaining from GLOBAL BLOCK'S CONFIG
         $dcfields = get_config($this->bname,'dcfields');
         if (empty($dcfields))
 			$dcfields = "empty";

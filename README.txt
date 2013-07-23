@@ -1,5 +1,5 @@
 README for boaidp, version 2.0.3
-July 19th, 2013
+July 3th, 2013
 
 This is the new implementation of Moodle's Block for metadata 
 associated to Moodle's Courses and their further manipulation (in a manually mode, by editing course's block instances).
@@ -9,11 +9,14 @@ No additional tables. No preload fields values (only Moodle config is used).
 
 The main aims of these metadata is to serve as basis (Data Provider) for further OAI-PMH 2.0 Harvester implementations, so feel you free to test and improve this Moodle's Block Plugin.
 
+Besides, inside phpoai2 folder, we have customized and PHP OAI-PMH interface for query de metadata associated with each BOAIDP course's block.
+For testing OAI-PMH Interface please use the following URL: http://<moodlehost>/blocks/boaidp/phpoai2/oai2.php
+
 This Moodle's Block is written in PHP, following the Moodle Development/Contributions guidelines/recommendations.
 
 
-GETTING ON GITHUB
+GETTING AND COLLABORATING ON GITHUB
 https://github.com/mglaredo/moodle-block_boaidp
 
-GETTING ON MOODLE
+GETTING STABLE PACKAGES ON MOODLE
 https://moodle.org/plugins/view.php?plugin=block_boaidp

@@ -1,0 +1,8 @@
+(Jul 23th, 2013)
+- Improve validation.
+- Solve possible problem with Dublin Core XSD.
+- Test, test, test!.
+
+(May 18th, 2011)
+- Drop from "moodle.mdl_oai_records" each field started by "dc" prefix.
+- Then, test again the software.

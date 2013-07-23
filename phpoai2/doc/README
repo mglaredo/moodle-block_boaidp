@@ -1,0 +1,29 @@
+README for phpoai2, version 2.1
+July 2013
+
+This is an implementation for an OAI-PMH 2.0 Data Provider, written in PHP.
+
+This implementation completely complies to OAI-PMH 2.0, including
+the support of on-the-fly output compression which may significantly
+reduce the amount of data being transfered.
+
+Database support is based on Moodle DB and CORE API. 
+
+The repository can be deeply configured by just editing 
+oai2/oaidp-config.php, most possible values and options are explained. 
+
+At this release, additionally, the data model of database is prepared for 
+growing the metadata schema standards used besides Dublin Core.
+
+
+Any comments are welcome.
+
+------------------------------------------
+Miguel González Laredo
+Virtual Learning Center (CEVUG)
+University of Granada
+
+mglaredo@ugr.es
+
+
+

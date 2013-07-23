@@ -11,6 +11,15 @@ $string['boaidp:myaddinstance'] = 'Add a newblock block to my moodle';
 $string['dcfields'] = 'DCMES';
 $string['dcfieldsDesc'] = 'DCMES';
 $string['dcmes'] = 'DCMES summary';
+$string['header_oaipmh_config'] = 'OAI-PMH: Global Config';
+$string['desc_oaipmh_config']   = 'Specific Harvesting Customization';
+$string['earliestDay'] = '(OAI-PMH interface) Earliest Day';
+$string['earliestDay_desc'] = ' The earliest day in your repository';
+$string['earliestMonth'] = '(OAI-PMH interface) Earliest Month';
+$string['earliestMonth_desc'] = ' The earliest month in your repository';
+$string['earliestYear'] = '(OAI-PMH interface) Earliest Year';
+$string['earliestYear_desc'] = ' The earliest year in your repository';
+
 //$string['pluginname'] = 'Newblock';
 
 //BLOCK'S GENERAL STRINGS

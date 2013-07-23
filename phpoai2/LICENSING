@@ -1,14 +1,13 @@
-<?php
-/**
+/*
  * +----------------------------------------------------------------------+
  * | PHP Version 5                                                        |
  * +----------------------------------------------------------------------+
- * | Copyright (c) 2013 Miguel Gonzalez Laredo                            |
+ * | Copyright (c) 2011 Miguel Gonzalez Laredo                            |
  * |                    mglaredo@ugr.es                                   |
  * |                    University of Granada                             |
  * |                                                                      |
- * | boaidp -- A Moodle Block for generating and editing Course's Metadata|
- * |           and the further connection with OAI v2.0's Data Providers  |
+ * | boaidp -- A Moodle Block for generating and editing                  | 
+ * |           Course's Metadata for Data Providers by version OAI v2.0   |
  * |                                                                      |
  * | This is free software; you can redistribute it and/or modify it under|
  * | the terms of the GNU General Public License as published by the      |
@@ -24,17 +23,14 @@
  * | If not, see http://opensource.org/licenses/gpl-3.0.html.             |
  * |                                                                      |
  * +----------------------------------------------------------------------+
+ * | Derived from work by Heinrich Stamerjohanns, May 2002                |
+ * |                                                                      |
+ * | Written by Miguel Gonzalez Laredo , Jun 2013                         |
+ * |                mglaredo@ugr.es                                       |
+ * |        Virtual Learning Center CEVUG, University of Granada          |
+ * +----------------------------------------------------------------------+
+ *
  * @copyright Copyright (c) 2013 Miguel Gonzalez Laredo. Virtual Learning Center CEVUG, University of Granada
  * @license    http://opensource.org/licenses/gpl-3.0.html     GNU Public License
  * @author Miguel Gonzalez Laredo, mglaredo@ugr.es                     
  */
-
-
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->version   = 2013072301;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2012112900;        // Requires this Moodle version
-$plugin->component = 'block_boaidp'; 	// Full name of the plugin (used for diagnostics)
-$plugin->cron = 0;
-$plugin->maturity = MATURITY_BETA;	// MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC, MATURITY_STABLE 
-$plugin->release   = '2.0.4';
